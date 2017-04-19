@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+    <title>注册社趣</title>
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+<div class="logo"></div>
+    <form method="post" id="change_password" onsubmit="return false" class="form">
+        <div class="input_box">
+                <input type="tel" name="mobile" id="mobile" class="input" placeholder="
+输入您的手机号" autocomplete="off"/>
+        </div>
+        <div class="input_check">
+                <input type="text" placeholder="输入验证码" class="input" name="code" />
+                <button class="get">获取验证码</button>
+        </div>
+        <div class="input_box">
+                <input type="password" name="newPassword" class="input" placeholder="请输入新密码（最少6位）" />
+        </div>
+        <button class="form_button" type="submit">注册</button>
+    </form>
+    <div class="deal">我已阅读并同意<a href="">用户使用协议</a></div>
+
+    <div class="alert">
+        <p class="alert_title">提示</p>
+        <p class="alert_text"></p>
+        <button class="alert_btn">好的</button>
+    </div>
+    <div class="shadow"></div>
+</body>
+<script>
+
+</script>
+</html>

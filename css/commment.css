@@ -1,0 +1,89 @@
+.reply{
+    padding:15px 25px;
+    border-bottom: 1px solid #c9caca;
+    position: relative;
+}
+.reply p{
+    text-align: justify;
+    font-size: 14px;
+    margin-top:5px;
+}
+.reply span{
+    font-size: 14px;
+}
+.reply ul{
+    display: flex;
+}
+.reply-text{
+    flex:5;
+}
+.reply-img{
+    width:55px;
+
+}
+.reply-img img{
+    width:35px;
+    height:35px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+.reply-time{
+    float: right;
+    margin-top: 3px;
+    color:#666
+}
+.reply-to-reply{
+    margin-left:40px;
+    padding-left:14px;
+    margin-top:10px;
+    border-left: 1px solid #c9caca;
+}
+.reply-to-reply-name{
+
+}
+.reply-to-reply-time{
+    float: right;
+    margin-top: 3px;
+    color:#666
+}
+.reply-to-reply p{
+    color: #7a7a7a;
+}
+.shadow{
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    display: none;
+}
+.reply-button{
+    height:50px;
+    line-height: 50px;
+    border-bottom: 1px solid #c9caca;
+    color: #ef7c52;
+}
+.cancel-button{
+    height:50px;
+    line-height: 50px;
+}
+.bottom-button{
+    position: fixed;
+    text-align: center;
+    height:100px;
+    bottom:0;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.reply-input{
+    position: fixed;
+    height:20px;
+    line-height: 20px;
+    bottom: 0;
+    width:100%;
+    outline: 0;
+    display: none;
+}

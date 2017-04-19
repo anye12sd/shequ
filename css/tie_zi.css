@@ -1,0 +1,55 @@
+.tie_title{
+    padding:0 25px;
+    border-bottom: 1px solid #c9caca;
+}
+.tie_title_title{
+    font-size: 18px;
+}
+.tie_title_time{
+    font-size: 14px;
+    color:#666;
+}
+.tie_content{
+    padding:15px 25px;
+    border-bottom: 10px solid #c9caca;
+}
+.reply{
+    padding:15px 25px;
+    border-bottom: 1px solid #c9caca;
+    position: relative;
+}
+.reply p{
+    text-align: justify;
+    font-size: 14px;
+    margin-top:5px;
+}
+.reply span{
+    font-size: 14px;
+}
+.reply ul{
+    display: flex;
+}
+.reply-text{
+    flex:5;
+}
+.reply-img{
+    flex:1;
+
+}
+.reply-img img{
+    width:35px;
+    height:35px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+.reply-time{
+    margin-left: 30px;
+}
+.reply-comment{
+    text-align: right;
+    float: right;
+    background: url("../img/comment_40.png")center no-repeat;
+    background-size: 15px;
+    width:15px;
+    height:21px;
+}

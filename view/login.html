@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+    <title>社趣</title>
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="form">
+        <form onsubmit="return false" method="post">
+            <div class="input_box">
+                <div class="input_left">
+                    <label class="input_username_left"></label>
+                </div>
+                <div class="input_right">
+                    <input type="tel" name="mobile" class="input" placeholder="
+手机号" autocomplete="off"/>
+                </div>
+            </div>
+            <div class="input_box">
+                <div class="input_left">
+                    <label class="input_password_left"></label>
+                </div>
+                <div class="input_right">
+                    <input type="password" name="password" class="input"
+                           placeholder="密码" />
+                </div>
+            </div>
+            <button type="submit" class="form_button">登录</button>
+        </form>
+        <div class="demo-list">
+            <span class="register">注册社趣</span>
+            <span class="demo-list-middle"></span>
+            <span class="forget">忘记密码</span>
+        </div>
+    </div>
+    <div class="alert">
+        <p class="alert_title">提示</p>
+        <p class="alert_text"></p>
+        <button class="alert_btn">好的</button>
+    </div>
+    <div class="shadow"></div>
+</body>
+<script>
+    $(function(){
+//提交表单,先本地验证表单再进行ajax提交
+        $('.form_button').on('click',function(){
+            // 判断帐号密码是否为空，再进行ajax传值
+            if(!($(".input").eq(0).val() =="") && !($(".input").eq(1).val() =="") ){
+                $.ajax({
+                    type: "post",
+                    url: 'login',
+                    data: $("#change_password").serializeArray(),
+                    dataType: 'json',
+
+                    success: function (data) {
+                        if (data.code==200) {
+                                // window.location.href = "my_list";
+                        } else {
+                            errHandler();
+                            $(".alert_text").text(data.message);
+                        }
+                    },
+
+                    error: function (e) {
+
+                    },
+
+                    complete: function (XMLHttpRequest, textStatus) {
+
+                    }
+                });
+            }else{
+                errHandler();
+                $(".alert_text").text("请输入用户名和密码");
+            }
+        });
+    });
+
+
+
+    function errHandler(){
+        $(".alert").css("display","block");
+        $(".shadow").css("display","block");
+        $(".alert_btn").on("click",function(){
+            $(".alert").css("display","none");
+            $(".shadow").css("display","none");
+        })
+    }
+
+    $(".register").on("click",function(){
+        window.location.href = "register.html";
+    })
+
+    $(".forget").on("click",function(){
+        window.location.href = "forgetPassword.html";
+    })
+</script>
+</html>

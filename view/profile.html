@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+    <title>编辑个人主页</title>
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+<div class="tie_top">
+    <span class="cancel">取消</span>
+    <span class="title">编辑个人中心</span>
+    <span class="confirm">发布</span>
+</div>
+    <div class="container">
+        <form action="" class="general">
+            <div class="general_form">
+                <label for="">头像</label>
+                <div class="half">
+                    <!--<input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">-->
+                    <a class="logo" id="logox">
+                        <img id="bgl" src="../img/logo_n.png">
+                    </a></div>
+            </div>
+            <div></div>
+            <div class="general_form">
+                <label for="">昵称</label>
+                <div class="weui-cell__bd general_right">
+                    <input type="text" class="weui-input" placeholder="哈利波特"/>
+                </div>
+            </div>
+            <div class="general_form weui-cell weui-cell_select weui-cell_select-after">
+                <label for="">性别</label>
+                <div class="weui-cell__bd general_right">
+                    <select name="customerSex" class="weui-select">
+                        <option value="1">男</option>
+                        <option value="2">女</option>
+                    </select>
+                </div>
+            </div>
+            <div class="general_form">
+                <label for="">城市</label>
+                <div class="weui-cell__bd general_right">
+                    <input type="text" class="weui-input" placeholder="杭州"/>
+                </div>
+            </div>
+            <div class="general_form">
+                <label for="" class="summary">简介</label>
+                <div class="weui-cell__bd general_right">
+                    <textarea rows="3" class="weui-textarea" placeholder="请输入你的简介"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="htmleaf-container">
+        <div id="clipArea"></div>
+        <div class="foot-use">
+            <div class="uploader1 blue">
+                <input type="button" name="file" class="button" value="打开">
+                <input id="file" type="file" onchange="javascript:setImagePreview();" accept="image/*" multiple  />
+            </div>
+            <button id="clipBtn">截取</button>
+        </div>
+        <div id="view"></div>
+    </div>
+</body>
+<script>window.jQuery || document.write('<script src="../js/jquery-2.1.1.min.js"><\/script>')</script>
+<script src="../js/iscroll-zoom.js"></script>
+<script src="../js/hammer.js"></script>
+<script src="../js/jquery.photoClip.js"></script>
+<script>
+    var obUrl = ''
+    //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    $("#clipArea").photoClip({
+        width: 199,
+        height: 166,
+        file: "#file",
+        view: "#view",
+        ok: "#clipBtn",
+        loadStart: function() {
+            console.log("照片读取中");
+        },
+        loadComplete: function() {
+            console.log("照片读取完成");
+        },
+        clipFinish: function(dataURL) {
+            console.log(dataURL);
+        }
+    });
+
+    $(function(){
+        $("#logox").click(function(){
+            $(".htmleaf-container").show();
+        })
+        $("#clipBtn").click(function(){
+            $("#logox").empty();
+            $('#logox').append('<img src="' + imgsource + '" align="absmiddle" style=" width: 50px;height: 50px;border-radius: 50%">');
+            $(".htmleaf-container").hide();
+        })
+    });
+
+    $(function(){
+        $(".mask").click(function(){
+            $(".mask").hide();
+            $(".all").hide();
+        })
+        $(".right input").blur(function () {
+            if ($.trim($(this).val()) == '') {
+                $(this).addClass("place").html();
+            }
+            else {
+                $(this).removeClass("place");
+            }
+        })
+    });
+
+    function setImagePreview() {
+        var preview, img_txt, localImag, file_head = document.getElementById("file_head"),
+                picture = file_head.value;
+        if (!picture.match(/.jpg|.gif|.png|.bmp/i)) return alert("您上传的图片格式不正确，请重新选择！"),
+                !1;
+        if (preview = document.getElementById("preview"), file_head.files && file_head.files[0]) preview.style.display = "block",
+                preview.style.width = "63px",
+                preview.style.height = "63px",
+                preview.src = window.navigator.userAgent.indexOf("Chrome") >= 1 || window.navigator.userAgent.indexOf("Safari") >= 1 ? window.webkitURL.createObjectURL(file_head.files[0]) : window.URL.createObjectURL(file_head.files[0]);
+        else {
+            file_head.select(),
+                    file_head.blur(),
+                    img_txt = document.selection.createRange().text,
+                    localImag = document.getElementById("localImag"),
+                    localImag.style.width = "63px",
+                    localImag.style.height = "63px";
+            try {
+                localImag.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)",
+                        localImag.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = img_txt
+            } catch(f) {
+                return alert("您上传的图片格式不正确，请重新选择！"),
+                        !1
+            }
+            preview.style.display = "none",
+                    document.selection.empty()
+        }
+        return document.getElementById("DivUp").style.display = "block",
+                !0
+    }
+</script>
+</html>

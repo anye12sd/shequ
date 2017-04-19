@@ -1,0 +1,194 @@
+
+body{
+    background: #fff;
+    font-size: 14px;
+}
+.tie_top{
+    padding:15px 25px;
+    border-bottom: 1px solid #c9caca;
+    text-align: center;
+    font-size: 16px;
+}
+.cancel{
+    float: left;
+    font-size: 14px;
+    margin-top:4px;
+    color:#ef7c52;
+}
+.confirm{float: right;
+    font-size: 14px;
+    margin-top:4px;
+    color:#ef7c52;
+}
+
+.general_form{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding:0px 20px;
+    border-bottom: 1px solid #c9caca;
+}
+.general label{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    line-height: 50px;
+    text-align: left;
+}
+.general .summary{
+    line-height: 22px;
+}
+.general_right {
+    color: #666;
+    -webkit-box-flex: 5;
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
+    border:none;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    outline: none;
+    border-radius: 0;
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+}
+.half{
+    margin:0;
+    width: 88px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+}
+.half > a {
+    position: relative;
+    display: inline-block;
+}
+
+.half > a  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.half > p {
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    color: #999;
+}
+.logo{
+    background-color: #ccc;
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+}
+.htmleaf-container{
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background: #000;
+    display: none;
+    z-index: 9999999;
+}
+#clipArea {
+    height: 90%;
+}
+.foot-use{
+    background: #fff;
+    height: 10%;
+    width: 100%;
+    position: relative;
+}
+#file{
+    float: left;
+    height: 100%;
+}
+.button {
+    float: left;
+    height: 100%;
+    display: inline-block;
+    outline: 0 none;
+    margin: 0;
+    cursor: pointer;
+    border: 0;
+    width: 8rem;
+    font-size: 2rem;
+}
+.uploader1 {
+    position: absolute;
+    width: 50%;
+    height: 8rem;
+    cursor: default;
+    height: 100%;
+    float: left;
+}
+.uploader1 input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height:8rem;
+    width: 50%;
+    cursor: pointer;
+    border: solid 1px #ddd;
+    opacity: 0;
+}
+.blue .button {
+    color: #fff;
+    background: #ef7c52;
+    height: 100%;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+#clipBtn{
+    float: right;
+    height: 100%;
+    width: 8rem;
+    background: #ef7c52;
+    border: 0;
+    outline: none;
+    color: #fff;
+    font-size: 2rem;
+    z-index: 999;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+
+}
+
+/*修改weui样式*/
+.weui-cell:before{
+    display: none;
+}
+.weui-select{
+    height:30px;
+    line-height: 30px;
+    color:#666
+}
+.weui-cell_select .weui-cell__bd:after{
+    position: absolute;
+    right:30px;
+    top:50%;
+}
+.weui-input{
+    width: 100%;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    height: 50px;
+    line-height: 50px;
+}
+.weui-textarea{
+    background-color: transparent;
+    font-size: 14px;
+}

@@ -1,0 +1,142 @@
+body{
+    background-color: #fff;
+}
+.top-title{
+    padding:15px 25px;
+    font-size: 16px;
+    border-bottom: 1px solid #c9caca;
+}
+.top-title p{
+    display: inline-block;
+}
+.like{
+    text-align: right;
+    float: right;
+    background: url("../img/like_43.png")left no-repeat;
+    background-size: 15px;
+    width:40px;
+    height:19px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.comment{
+    text-align: right;
+    font-size: 14px;
+    float: right;
+    background: url("../img/comment_40.png")left no-repeat;
+    background-size: 15px;
+    width:40px;
+    height:19px;
+}
+.content{
+    padding:15px 25px;
+}
+.content-img{
+    width:35px;
+    height:35px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.img-right{
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+.img-right p{
+    font-size: 14px;
+}
+.content-text{
+    font-size: 14px;
+    margin-top: 15px;
+    text-align: justify;
+}
+.others{
+    padding:15px 25px;
+    border-bottom: 1px solid #c9caca;
+    position: relative;
+}
+.others-title{
+    padding:15px 25px;
+    background-color: #efefef;
+}
+.reply-title{
+    padding:15px 25px;
+    background-color: #efefef;
+}
+.others p{
+    text-align: justify;
+    font-size: 14px;
+    margin-top:5px;
+    height:38px;
+    overflow: hidden;
+}
+.others span{
+    font-size: 14px;
+}
+.others ul{
+    display: flex;
+}
+.others-text{
+    flex:5
+}
+.others-img{
+    flex:1;
+
+}
+.others-img img{
+    width:80px;
+    height:80px;
+    margin-right: 10px;
+}
+.content-wrapper{
+    position: absolute;
+    right:26px;
+    bottom:15px;
+}
+.reply{
+    padding:15px 25px;
+    border-bottom: 1px solid #c9caca;
+    position: relative;
+}
+.reply p{
+    text-align: justify;
+    font-size: 14px;
+    margin-top:5px;
+    height:38px;
+    overflow: hidden;
+}
+.reply span{
+    font-size: 14px;
+}
+.reply ul{
+    display: flex;
+}
+.reply-text{
+    flex:5;
+}
+.reply-img{
+    flex:1;
+
+}
+.reply-img img{
+    width:35px;
+    height:35px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+.reply-time{
+    margin-left: 30px;
+}
+.reply-comment{
+    text-align: right;
+    float: right;
+    background: url("../img/comment_40.png")center no-repeat;
+    background-size: 15px;
+    width:15px;
+    height:21px;
+}
+.more-reply{
+    padding:15px 0;
+    text-align: center;
+    color:#ef7c52;
+    font-size: 18px;
+}

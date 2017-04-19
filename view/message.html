@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>张小珊</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/message.css">
+</head>
+<body>
+<div class="speak_window">
+    <div class="speak_box">
+        <div class="answer">
+            <div class="heard_img left"><img src="../img/201505181012986.jpg"></div>
+            <div class="answer_text">
+                <p>这是一个私信界面有什么小问题问我吧</p>
+                <i></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wenwen-footer">
+    <div class="wenwen_text left">
+        <div class="write_box">
+            <input type="text" class="left" placeholder="请输入关键字" />
+        </div>
+    </div>
+    <div class="wenwen_help right">
+        <button onClick="up_say()" class="right">发送</button>
+    </div>
+    <div style="opacity:0;" class="clear"></div>
+</div>
+</body>
+<script type="text/javascript">
+
+    function up_say(){
+        $('.write_list').remove();
+        var text = $('.write_box input').val(),
+                str  = '<div class="question">';
+        str += '<div class="heard_img right"><img src="../img/201505181012986.jpg"/></div>';
+        str += '<div class="question_text clear"><p>'+text+'</p><i></i>';
+        str += '</div></div>';
+
+        if(text == ''){
+            alert('请输入提问！');
+            $('.write_box input').focus();
+        }else{
+            $('.speak_box').append(str);
+            $('.write_box input').val('');
+            $('.write_box input').focus();
+            autoWidth();
+            for_bottom();
+            setTimeout(function(){
+                var ans  = '<div class="answer"><div class="heard_img left"><img src="../img/201505181012986.jpg"/></div>';
+                ans += '<div class="answer_text"><p>您发送的文字是：'+text+'</p><i></i>';
+                ans += '</div></div>';
+                $('.speak_box').append(ans);
+                for_bottom();
+            },1000);
+        }
+    }
+
+    function for_bottom(){
+        var speak_height = $('.speak_box').height();
+        $('.speak_box,.speak_window').animate({scrollTop:speak_height},500);
+    }
+
+    function autoWidth(){
+        $('.question_text').css('max-width',$('.question').width()-60);
+    }
+    autoWidth();
+
+</script>
+</html>

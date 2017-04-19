@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+    <title>我的私信</title>
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/message_page.css">
+</head>
+<body>
+<button class="del">删除</button>
+
+<div class="content">
+    <div class="c1">
+        <ul>
+            <li><img src="../img/banner1.png" alt=""></li>
+            <li>
+                <div class="text">
+                    <span>社趣团队</span><span class="time">04/12</span>
+                    <p>如果说你还不能简介的表达你的想法，那只能说明你还不够了解他。</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div style="clear: both"></div>
+</div>
+<div class="content">
+    <div class="c1">
+        <ul>
+            <li><img src="../img/banner1.png" alt=""></li>
+            <li>
+                <div class="text">
+                    <span>社趣团队</span><span class="time">04/12</span>
+                    <p>如果说你还不能简介的表达你的想法，那只能说明你还不够了解他。</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div style="clear: both"></div>
+</div>
+<div class="content">
+    <div class="c1">
+        <ul>
+            <li><img src="../img/banner1.png" alt=""></li>
+            <li>
+                <div class="text">
+                    <span>社趣团队</span><span class="time">04/12</span>
+                    <p>如果说你还不能简介的表达你的想法，那只能说明你还不够了解他。</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div style="clear: both"></div>
+</div>
+<div class="bottom-nav">
+    <ul>
+        <li>首页</li>
+        <li>私信</li>
+        <li>我</li>
+    </ul>
+</div>
+</body>
+<script>
+    var startX;
+    var moveX;
+    var marginLeft;
+    var diff;
+    var height = $(".content").height();
+    var top1 = $(".content").offset().top;
+    // console.log(top1);
+    // console.log(height)
+    $(function () {
+        var content = $(".content");
+        content.each(function (i, dom) {
+            dom.addEventListener("touchstart", function (e) {
+                $(this).siblings().stop(true, true).animate({marginLeft: "0px"}, 500);
+                $(this).attr("a", "1");
+                $(this).siblings().removeAttr("a");
+                height = $(this).height();
+                top1 = $(this).offset().top;
+                // console.log(top1);
+                $(".del").css("display", "block");
+                $(".del").css({"height": height + 2 + "px", "top": top1 - 1 + "px"});
+                var touch = e.touches[0]; //获取第一个触点
+                startX = Number(touch.pageX);
+                marginLeft = parseInt($(this).css("marginLeft"));
+//                console.log(marginLeft);
+            });
+            dom.addEventListener("touchmove", function (e) {
+                var touch = e.touches[0]; //获取第一个触点
+                moveX = Number(touch.pageX);
+                diff = moveX - startX;
+                diff = marginLeft + diff;
+                if (diff < -100) {
+                    diff = -100
+                }
+                if (diff > 0) {
+                    diff = 0;
+                }
+                // console.log(diff);
+                $(this).css("marginLeft", marginLeft);
+                $(this).stop(true, true).animate({marginLeft: diff + "px"}, 300);
+            });
+            dom.addEventListener("touchend", function (e) {
+//                console.log(diff);
+                if (diff < -50) {
+                    $(this).stop(true, true).animate({marginLeft: "-50px"}, 300);
+                    $(".del").click(function () {
+                        $(".content[a]").css("display", "none");
+                        $(this).css("display", "none");
+                    })
+                } else if (diff < 0) {
+                    $(this).stop(true, true).animate({marginLeft: "0"}, 300);
+                } else {
+                    $(this).stop(true, true).animate({marginLeft: "0"}, 300);
+                }
+            });
+        });
+    });
+</script>
+</html>
