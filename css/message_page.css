@@ -12,7 +12,10 @@
 
 .c1 > ul {
     list-style: none;
-    display: flex
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
 }
 
 .c1 > ul > li:nth-of-type(1) {
@@ -28,7 +31,10 @@
     display: block;
 }
 .c1 > ul > li:nth-of-type(2) {
-    flex: 3
+    -webkit-box-flex: 3;
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
 }
 .time{font-size:14px;display:inline-block;float:right;margin-top: 2px;}
 .text p{
@@ -52,6 +58,9 @@
     font-size: 14px;
 }
 .bottom-nav ul{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .bottom-nav ul li:nth-of-type(1){
@@ -59,19 +68,28 @@
     background-size: 22px;
     width:22px;
     height:32px;
-    flex:1
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 .bottom-nav ul li:nth-of-type(2){
     background: url("../img/msg_24.png")no-repeat center;
     background-size: 22px;
     width:22px;
     height:33px;
-    flex:1
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 .bottom-nav ul li:nth-of-type(3){
     background: url("../img/my_88.png")no-repeat center;
     background-size: 22px;
     width:22px;
     height:33px;
-    flex:1
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }

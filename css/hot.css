@@ -73,13 +73,22 @@ body{
     font-size: 14px;
 }
 .others ul{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .others-text{
-    flex:5
+    -webkit-box-flex: 5;
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
 }
 .others-img{
-    flex:1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 
 }
 .others-img img{
@@ -108,13 +117,22 @@ body{
     font-size: 14px;
 }
 .reply ul{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .reply-text{
-    flex:5;
+    -webkit-box-flex: 5;
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
 }
 .reply-img{
-    flex:1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 
 }
 .reply-img img{

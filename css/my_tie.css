@@ -8,6 +8,9 @@ body{
     border-bottom: 1px solid #c9caca;
 }
 .content ul{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .content-img{
@@ -19,10 +22,16 @@ body{
     height:60px;
 }
 .content-span{
-    flex:5
+    -webkit-box-flex: 5;
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
 }
 .content-button{
-    flex:1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     background: url("../img/nav_right.png") no-repeat center;
     background-size: 10px;
     height:64px;

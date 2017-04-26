@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/common.css">
     <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/my_home.css">
+    <script src="../js/my_home.js"></script>
 </head>
 <body>
     <div class="top-unLogin">
@@ -21,11 +22,21 @@
     </div>
     <div class="content">
         <ul>
-            <li class="concern"><p class="concern-number">33</p><p class="concern-text">关注</p></li>
-            <li class="fans"><p class="fans-number">39</p><p class="fans-text">粉丝</p></li>
-            <li class="tie"><p class="tie-number">3100</p><p class="tie-text">帖子</p></li>
+            <li class="concern"><div><p class="concern-number">33</p><p class="concern-text">关注</p></div></li>
+            <li class="fans"><div><p class="fans-number">39</p><p class="fans-text">粉丝</p></div></li>
+            <li class="tie"><div><p class="tie-number">3100</p><p class="tie-text">帖子</p></div></li>
         </ul>
     </div>
 </div>
 </body>
+<script>
+    $(function(){
+        var strHtml_concern = "<a href='my_concern.html'></a>",
+            strHtml_fans = "<a href='my_fans.html'></a>",
+            strHtml_tie = "<a href='my_concern.html'></a>";
+        $(".concern div").wrap(strHtml_concern);
+        $(".fans div").wrap(strHtml_fans);
+        $(".tie div").wrap(strHtml_tie);
+    })
+</script>
 </html>

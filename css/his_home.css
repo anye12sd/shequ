@@ -31,6 +31,9 @@ body{
     margin-top:5px;
 }
 .introduce ul{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .introduce ul li:nth-of-type(1){
@@ -42,7 +45,10 @@ body{
     margin:0 5px;
     text-align: center;
     font-size: 14px;
-    flex:1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     color:#fff;
     background: #ef7c52;
 }
@@ -56,10 +62,16 @@ body{
 }
 .fan-or-concern ul{
     text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .fan-or-concern ul li{
-    flex:1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 .fan-or-concern ul li:nth-of-type(1){
     border-right: 1px solid #c9caca;
@@ -75,6 +87,9 @@ body{
     padding:15px;
 }
 .content ul{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .content-img{
@@ -86,10 +101,16 @@ body{
     height:60px;
 }
 .content-span{
-    flex:6
+    -webkit-box-flex: 6;
+    -webkit-flex: 6;
+    -ms-flex: 6;
+    flex: 6;
 }
 .content-button{
-    flex:1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     background: url("../img/nav_right.png") no-repeat center;
     background-size: 10px;
     height:64px;

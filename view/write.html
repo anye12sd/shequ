@@ -7,6 +7,7 @@
     <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/write.css">
+    <script src="../js/write.js"></script>
 </head>
 <body>
     <div class="tie_top">
@@ -20,5 +21,148 @@
 <div class="tie_content">
     <textarea name="" id="" class="tie_content_textarea" placeholder="请输入内容"></textarea>
 </div>
+    <form action="" class="general">
+        <div class="general_form">
+            <div class="half">
+                <!--<input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">-->
+                <a class="logo logox">
+                    <img src="../img/002.png">
+                </a>
+
+            </div>
+        </div>
+        </form>
+    <div class="htmleaf-container">
+        <div id="clipArea"></div>
+        <div class="foot-use">
+            <div class="uploader1 blue">
+                <input type="button" name="file" class="button" value="打开">
+                <input id="file" type="file" onchange="javascript:setImagePreview();" accept="image/*" multiple  />
+            </div>
+            <button id="clipBtn">截取</button>
+        </div>
+        <div id="view"></div>
+    </div>
+    <div class="shadow"></div>
+    <div class="bottom-button">
+        <div class="del-button">删除</div>
+        <div class="cancel-button">取消</div>
+    </div>
+<button class="a" onclick="alert('d')">asd</button>
 </body>
+<script>window.jQuery || document.write('<script src="../js/jquery-2.1.1.min.js"><\/script>')</script>
+<script src="../js/iscroll-zoom.js"></script>
+<script src="../js/hammer.js"></script>
+<script src="../js/jquery.photoClip.js"></script>
+<script>
+    var obUrl = '';
+    var index = 0;
+    //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    $("#clipArea").photoClip({
+        width: 199,
+        height: 166,
+        file: "#file",
+        view: "#view",
+        ok: "#clipBtn",
+        loadStart: function() {
+            // console.log("照片读取中");
+        },
+        loadComplete: function() {
+            // console.log("照片读取完成");
+        },
+        clipFinish: function(dataURL) {
+            // console.log(dataURL);
+            if(index != 1){
+                alert("添加成功，点击相对应图片可删除")
+                index ++;
+            }
+        }
+    });
+    $(function(){
+        $(".logox").click(function(){
+            if($('.logox').length < 4){
+                $(".htmleaf-container").show();
+            }else{
+                alert("最多只能输入三张图片")
+            }
+        });
+
+        $("#clipBtn").click(function(){
+            if(imgsource) {
+                //$(".logox").empty();
+                //$('.logox').append('<img src="../img/002.png" align="absmiddle" style=" width: 52px;height: 52px;border:none">');
+                $(".half").append("<a class='logo logox'>" +
+                        '<img src="' + imgsource + '" align="absmiddle" style=" width: 52px;height: 52px;border:none">'
+                        + "</a>");
+                $(".htmleaf-container").hide();
+            }
+            $(".logox").each(function(i,dom){
+                dom.addEventListener("click",function(){
+                    if(i != 0){
+                        $(this).remove();
+                    }
+                })
+            })
+        })
+    });
+
+    function deleteHandle(){
+            $(".shadow").css("display","block");
+            $(".bottom-button").css("display","block");
+            $(".del-button").on("click",function(){
+                $(".shadow").css("display","none");
+                $(".bottom-button").css("display","none");
+                $(".logox").eq(index-1).remove();
+            });
+            $(".cancel-button").on("click",function(){
+                $(".shadow").css("display","none");
+                $(".bottom-button").css("display","none");
+            });
+    }
+
+    $(function(){
+        $(".mask").click(function(){
+            $(".mask").hide();
+            $(".all").hide();
+        })
+        $(".right input").blur(function () {
+            if ($.trim($(this).val()) == '') {
+                $(this).addClass("place").html();
+            }
+            else {
+                $(this).removeClass("place");
+            }
+        })
+    });
+
+    function setImagePreview() {
+        var preview, img_txt, localImag, file_head = document.getElementById("file_head"),
+                picture = file_head.value;
+        if (!picture.match(/.jpg|.gif|.png|.bmp/i)) return alert("您上传的图片格式不正确，请重新选择！"),
+                !1;
+        if (preview = document.getElementById("preview"), file_head.files && file_head.files[0]) preview.style.display = "block",
+                preview.style.width = "63px",
+                preview.style.height = "63px",
+                preview.src = window.navigator.userAgent.indexOf("Chrome") >= 1 || window.navigator.userAgent.indexOf("Safari") >= 1 ? window.webkitURL.createObjectURL(file_head.files[0]) : window.URL.createObjectURL(file_head.files[0]);
+        else {
+            file_head.select(),
+                    file_head.blur(),
+                    img_txt = document.selection.createRange().text,
+                    localImag = document.getElementById("localImag"),
+                    localImag.style.width = "63px",
+                    localImag.style.height = "63px";
+            try {
+                localImag.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)",
+                        localImag.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = img_txt
+            } catch(f) {
+                return alert("您上传的图片格式不正确，请重新选择！"),
+                        !1
+            }
+            preview.style.display = "none",
+                    document.selection.empty()
+        }
+        return document.getElementById("DivUp").style.display = "block",
+                !0
+    }
+</script>
 </html>

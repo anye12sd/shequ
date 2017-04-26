@@ -3,7 +3,6 @@
  */
 
 $(function(){
-    window.location.href="./view/comment.html";
 
     var mySwiper = new Swiper('.swiper-container', {
         autoplay: 1000,

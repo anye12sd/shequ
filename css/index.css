@@ -83,13 +83,22 @@
     font-size: 14px;
 }
 .hot-content1 ul{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .hot-content1-text{
-    flex:5
+    -webkit-box-flex: 5;
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
 }
 .hot-content1-img{
-    flex:1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 
 }
 .hot-content1-img img{
@@ -148,13 +157,22 @@
     font-size: 14px;
 }
 .activity ul{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .activity-text{
-    flex:5
+    -webkit-box-flex: 5;
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
 }
 .activity-img{
-    flex:1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 
 }
 .activity-img img{
@@ -177,13 +195,22 @@
     font-size: 14px;
 }
 .all-text ul{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .all-text-text{
-    flex:5
+    -webkit-box-flex: 5;
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
 }
 .all-text-img{
-    flex:1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 
 }
 .all-text-img img{
@@ -206,6 +233,9 @@
     font-size: 14px;
 }
 .bottom-nav ul{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .bottom-nav ul li:nth-of-type(1){
@@ -213,19 +243,28 @@
     background-size: 22px;
     width:22px;
     height:32px;
-    flex:1
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 .bottom-nav ul li:nth-of-type(2){
     background: url("../img/msg_24.png")no-repeat center;
     background-size: 22px;
     width:22px;
     height:33px;
-    flex:1
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 .bottom-nav ul li:nth-of-type(3){
     background: url("../img/my_88.png")no-repeat center;
     background-size: 22px;
     width:22px;
     height:33px;
-    flex:1
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
